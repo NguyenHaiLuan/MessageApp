@@ -11,8 +11,8 @@ import com.example.myapplication.R
 import com.google.firebase.auth.FirebaseAuth
 
 class SplashActivity : AppCompatActivity() {
-    private lateinit var splashAnimation : LottieAnimationView
-    private var auth : FirebaseAuth ? = null
+    private lateinit var splashAnimation: LottieAnimationView
+    private var auth: FirebaseAuth? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,14 +21,25 @@ class SplashActivity : AppCompatActivity() {
         // Xử lí animation và chuyển hướng sang activity tiếp theo
         splashAnimation = findViewById(R.id.splashAnimation)
         splashAnimation.playAnimation()
+
+        auth = FirebaseAuth.getInstance()
+
+        //Xử lí kiểm tra để chuyển sang class khác
         splashAnimation.postDelayed({
-            val intent = Intent(this@SplashActivity, SignUp::class.java)
-            startActivity(intent)
-            finish()
+            if (auth!!.currentUser != null) {
+                val intent = Intent(this@SplashActivity, MainActivity::class.java)
+                startActivity(intent)
+                finish()
+            } else {
+                val intent = Intent(this@SplashActivity, LoginActivity::class.java)
+                startActivity(intent)
+                finish()
+            }
+
         }, 4000)
     }
 
-    private fun initUI(){
+    private fun initUI() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_splash)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
@@ -38,7 +49,4 @@ class SplashActivity : AppCompatActivity() {
         }
     }
 
-    private fun initAnimation(){
-
-    }
 }
