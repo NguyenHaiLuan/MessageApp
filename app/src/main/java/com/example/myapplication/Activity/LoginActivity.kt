@@ -9,6 +9,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.myapplication.R
 import com.example.myapplication.databinding.ActivityLoginBinding
+import io.github.muddz.styleabletoast.StyleableToast
 
 class LoginActivity : AppCompatActivity() {
     private lateinit var bind: ActivityLoginBinding
@@ -26,7 +27,7 @@ class LoginActivity : AppCompatActivity() {
                 intent.putExtra("phone_number", phoneNumber)
                 startActivity(intent)
             } else {
-                Toast.makeText(this, "Vui lòng nhập số điện thoại", Toast.LENGTH_SHORT).show()
+                StyleableToast.makeText(this, "Vui lòng nhập số điện thoại", R.style.warning).show()
             }
         }
     }

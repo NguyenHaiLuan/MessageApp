@@ -19,6 +19,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.PhoneAuthCredential
 import com.google.firebase.auth.PhoneAuthOptions
 import com.google.firebase.auth.PhoneAuthProvider
+import io.github.muddz.styleabletoast.StyleableToast
 import java.util.concurrent.TimeUnit
 
 class VerificationActivity : AppCompatActivity() {
@@ -35,7 +36,7 @@ class VerificationActivity : AppCompatActivity() {
         inputOTP()
 
         dialog = ProgressDialog(this@VerificationActivity)
-        dialog!!.setMessage("Đang xác thực...")
+        dialog!!.setMessage("Đang xác minh số điện thoại...")
         dialog!!.setCancelable(false)
         dialog!!.show()
 
@@ -53,12 +54,11 @@ class VerificationActivity : AppCompatActivity() {
                 .setActivity(this@VerificationActivity)
                 .setCallbacks(object : PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
                     override fun onVerificationCompleted(p0: PhoneAuthCredential) {
-                        Toast.makeText(this@VerificationActivity, "Thành công!", Toast.LENGTH_SHORT).show()
-
+                        Toast.makeText(this@VerificationActivity, "Thành công!", R.style.success_toast).show()
                     }
 
                     override fun onVerificationFailed(p0: FirebaseException) {
-                        Toast.makeText(this@VerificationActivity, "Xác thực số điện thoại thất bại", Toast.LENGTH_SHORT).show()
+                        StyleableToast.makeText(this@VerificationActivity, "Lỗi! Có lẽ số điện thoại bạn nhập chưa đúng định dạng!", R.style.error_toast).show()
                         finish()
                     }
 
@@ -77,9 +77,10 @@ class VerificationActivity : AppCompatActivity() {
 
             PhoneAuthProvider.verifyPhoneNumber(options)
         } else {
-            Toast.makeText(this@VerificationActivity, "Chưa nhận được số điện thoại", Toast.LENGTH_SHORT).show()
+            StyleableToast.makeText(this@VerificationActivity, "Chưa nhận được số điện thoại", R.style.error_toast).show()
         }
 
+        //Xử lí khi nhập xong số 6
         bind.otp6.addTextChangedListener(
             afterTextChanged = {
                 if (bind.otp6.length() == 1) {
@@ -102,22 +103,20 @@ class VerificationActivity : AppCompatActivity() {
                     startActivity(intent)
                     finish()
                 } else {
-                    Toast.makeText(this@VerificationActivity, "Sai mã OTP", Toast.LENGTH_SHORT).show()
+                    StyleableToast.makeText(this@VerificationActivity, "Mã OTP chưa đúng! Vui lòng nhập lại!", R.style.warning).show()
                 }
             }
     }
 
     private fun getOTP() {
-        var l1 = bind.otp1.text.toString()
-        var l2 = bind.otp2.text.toString()
-        var l3 = bind.otp3.text.toString()
-        var l4 = bind.otp4.text.toString()
-        var l5 = bind.otp5.text.toString()
-        var l6 = bind.otp6.text.toString()
+        var l1 = bind.otp1.text.toString().trim()
+        var l2 = bind.otp2.text.toString().trim()
+        var l3 = bind.otp3.text.toString().trim()
+        var l4 = bind.otp4.text.toString().trim()
+        var l5 = bind.otp5.text.toString().trim()
+        var l6 = bind.otp6.text.toString().trim()
 
         otp = l1 + l2 + l3 + l4 + l5 + l6
-
-        Log.d("maOTPcheck", verificationId!!)
     }
 
     private fun initAnimation() {
@@ -134,7 +133,6 @@ class VerificationActivity : AppCompatActivity() {
                 if (bind.otp1.length() == 1) {
                     bind.otp2.requestFocus()
                 }
-
             })
 
         bind.otp2.addTextChangedListener(
@@ -187,7 +185,6 @@ class VerificationActivity : AppCompatActivity() {
             sendOTP()
         }
     }
-
 
     private fun initUI() {
         enableEdgeToEdge()
