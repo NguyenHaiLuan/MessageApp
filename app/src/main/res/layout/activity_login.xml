@@ -81,16 +81,4 @@
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
-    <TextView
-        android:id="@+id/btnDangNhap"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:clickable="true"
-        android:padding="8dp"
-        android:layout_margin="10dp"
-        android:text="Chưa có tài khoản? Đăng kí ngay!"
-        android:textAlignment="center"
-        android:textColor="@color/purple"
-        android:textSize="14sp" />
-
 </LinearLayout>
