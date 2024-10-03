@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="tim_dam">#6D77FB</color>
+    <color name="tim_nhat">#a27ce0</color>
+    <color name="tim_nhat_hon">#A996E5</color>
+
+    <color name="tim1">#a78bfa</color>
+    <color name="tim2">#a78bfa</color>
+    <color name="tim3">#a68bfa</color>
+
+    <color name="hong_nhat">#ebd1da</color>
+    <color name="hong">#ffd5dd</color>
+    <color name="hong_dam">#f99db5</color>
+
+
+    <color name="splash">#F9DAE7</color>
+    <color name="purple">#8692f7</color>
+    <color name="xanhnhat">#67BF7F</color>
+</resources>

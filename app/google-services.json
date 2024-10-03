@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "856514528024",
+    "project_id": "messageapp-8bd48",
+    "storage_bucket": "messageapp-8bd48.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:856514528024:android:ad8bd1007ef0844e5fd46d",
+        "android_client_info": {
+          "package_name": "com.example.myapplication"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBJQAOc0HQtr-qrORNtZ6rc5AUlxnref64"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
