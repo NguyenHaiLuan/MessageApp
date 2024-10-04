@@ -1,10 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activity.SetUpProfileActivity">
+    tools:context=".Activity.SetUpProfileActivity"
+    android:background="@drawable/appbackground">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="20dp"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="8dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#F8F8FF">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/avtSetUp"
+                android:layout_width="175dp"
+                android:layout_height="175dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="40dp"
+                app:srcCompat="@drawable/user"
+                android:scaleType="centerCrop"
+                app:shapeAppearanceOverlay="@style/circle"/>
+
+            <TextView
+                android:id="@+id/btnChonAnh"
+                android:layout_below="@+id/avtSetUp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Chọn ảnh"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/edt_name_profile"
+                android:layout_below="@+id/btnChonAnh"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/custom_edittext"
+                android:drawableLeft="@drawable/baseline_person_24"
+                android:textColorHint="@color/purple"
+                android:drawablePadding="8dp"
+                android:hint="Nhập tên của bạn ở đây"
+                android:inputType="textPersonName"
+                android:padding="8dp"
+                android:textSize="16sp"
+                android:textColor="@color/purple"
+                android:textColorHighlight="@color/cardview_dark_background"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginTop="40dp"/>
+
+            <Button
+                android:id="@+id/btn_apply_profile"
+                android:layout_below="@+id/edt_name_profile"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_margin="60dp"
+                android:backgroundTint="@color/purple"
+                android:text="Hoàn tất"
+                android:textAllCaps="true"
+                android:textSize="18sp"
+                app:cornerRadius="20dp" />
+        </RelativeLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+
+
+
+</RelativeLayout>
