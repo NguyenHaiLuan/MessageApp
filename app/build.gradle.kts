@@ -62,4 +62,9 @@ dependencies {
     implementation ("io.github.muddz:styleabletoast:2.4.0")
     //Picasso
     implementation ("com.squareup.picasso:picasso:2.8")
+
+    //Glide
+    implementation ("com.github.bumptech.glide:glide:4.12.0")
+    implementation ("com.github.bumptech.glide:compiler:4.12.0")
+
 }

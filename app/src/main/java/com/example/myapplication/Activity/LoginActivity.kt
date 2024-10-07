@@ -2,7 +2,6 @@ package com.example.myapplication.Activity
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -19,7 +18,7 @@ class LoginActivity : AppCompatActivity() {
         logInButtonClick()
     }
 
-    private fun logInButtonClick(){
+    private fun logInButtonClick() {
         bind.btnLogIn.setOnClickListener {
             val phoneNumber = bind.edtSdtLogIn.text.toString().trim()
             if (phoneNumber.isNotEmpty()) {
@@ -32,7 +31,7 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
-    private fun initUI(){
+    private fun initUI() {
         enableEdgeToEdge()
         bind = ActivityLoginBinding.inflate(layoutInflater)
         val view = bind.root
