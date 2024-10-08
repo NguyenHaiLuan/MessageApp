@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="120dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="20dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_margin="13dp"
+            android:background="#FF9999"
+            android:scaleType="centerCrop"
+            app:shapeAppearanceOverlay="@style/circular"/>
+        
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/avtConversation"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_margin="13dp"
+            android:padding="3dp"
+            app:srcCompat="@drawable/img"
+            android:scaleType="centerCrop"
+            app:shapeAppearanceOverlay="@style/circular"/>
+
+        <TextView
+            android:id="@+id/userNameConversation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="User name"
+            android:textSize="21sp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/sf_semi_bold"
+            android:layout_toRightOf="@+id/avtConversation"
+            android:layout_toLeftOf="@+id/timeConversation"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="20dp"
+            android:maxLines="1"
+            android:ellipsize="end"/>
+
+        <TextView
+            android:id="@+id/timeConversation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="4m"
+            android:textSize="18sp"
+            android:textColor="#C0C0C0"
+            android:fontFamily="@font/sf_regular"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"/>
+
+        <TextView
+            android:id="@+id/lastMessage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Last message display hereeeeeeeeeee"
+            android:textSize="18sp"
+            android:textColor="#808080"
+            android:fontFamily="@font/sf_regular"
+            android:layout_toRightOf="@+id/avtConversation"
+            android:layout_below="@+id/userNameConversation"
+            android:layout_marginEnd="20dp"
+            android:maxLines="1"
+            android:ellipsize="end" />
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>
