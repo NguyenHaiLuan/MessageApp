@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.function.FindFriendsActivity">
+
+    <EditText
+        android:id="@+id/edt_findFriend"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="10dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="9dp"
+        android:background="@drawable/custom_edittext"
+        android:drawableLeft="@drawable/baseline_search_24"
+        android:drawablePadding="8dp"
+        android:hint="Số điện thoại hoặc tên bạn cần tìm"
+        android:padding="8dp"
+        android:textColor="@color/purple"
+        android:textColorHighlight="@color/cardview_dark_background"
+        android:textColorHint="@color/purple"
+        android:textSize="16sp" />
+
+
+    <Button
+        android:id="@+id/btn_findFriend_FF"
+        android:layout_width="150dp"
+        android:layout_height="60dp"
+        android:layout_below="@+id/edt_findFriend"
+        android:backgroundTint="@color/purple"
+        android:text="Tìm"
+        android:textAllCaps="true"
+        android:textSize="18sp"
+        app:cornerRadius="20dp"
+        android:layout_margin="10dp"
+        android:layout_centerHorizontal="true"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/friendRecyclerView"
+        android:layout_below="@+id/btn_findFriend_FF"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp"/>
+
+</RelativeLayout>
