@@ -1,4 +1,4 @@
-package com.example.myapplication.Activity
+package com.example.myapplication.activity
 
 import android.app.ProgressDialog
 import android.content.Intent
@@ -8,7 +8,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.example.myapplication.Model.User
+import com.example.myapplication.model.User
 import com.example.myapplication.R
 import com.example.myapplication.databinding.ActivitySetUpProfileBinding
 import com.google.firebase.auth.FirebaseAuth

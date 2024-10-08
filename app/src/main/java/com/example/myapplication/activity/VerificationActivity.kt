@@ -1,10 +1,9 @@
-package com.example.myapplication.Activity
+package com.example.myapplication.activity
 
 import android.app.ProgressDialog
 import android.content.Intent
 import android.os.Bundle
 import android.view.inputmethod.InputMethodManager
-import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat

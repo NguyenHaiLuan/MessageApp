@@ -5,14 +5,14 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activity.MainActivity"
+    tools:context=".activity.MainActivity"
     android:background="@drawable/appbackground">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/infomationBlock"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="15dp"
+        android:layout_margin="20dp"
         app:cardElevation="8dp"
         app:cardCornerRadius="15dp"
         android:visibility="gone">
@@ -77,7 +77,7 @@
             <androidx.cardview.widget.CardView
                 android:id="@+id/FindFriendBlock"
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
+                android:layout_height="80dp"
                 android:layout_margin="20dp"
                 app:cardElevation="8dp"
                 app:cardCornerRadius="15dp">
@@ -86,15 +86,15 @@
                     android:id="@+id/btnFindFriend"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@drawable/item_color_vang"
+                    android:background="@drawable/item_color_xanh_duong"
                     android:orientation="horizontal">
 
                     <com.google.android.material.imageview.ShapeableImageView
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
                         android:layout_gravity="center"
                         app:srcCompat="@drawable/find_friend"
-                        android:padding="17dp"
+                        android:padding="10dp"
                         android:layout_marginLeft="15dp"/>
 
                     <TextView
@@ -113,8 +113,9 @@
                 android:id="@+id/NhanTinblock"
                 android:layout_below="@+id/FindFriendBlock"
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:layout_margin="20dp"
+                android:layout_height="80dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
                 app:cardElevation="8dp"
                 app:cardCornerRadius="15dp">
 
@@ -122,33 +123,33 @@
                     android:id="@+id/btnNhanTin"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@drawable/item_color_vang"
+                    android:background="@drawable/item_color_xanh_duong"
                     android:orientation="horizontal">
 
                     <com.google.android.material.imageview.ShapeableImageView
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
                         android:layout_gravity="center"
-                        app:srcCompat="@drawable/email"
-                        android:padding="17dp"
-                        android:layout_marginLeft="15dp"/>
+                        android:layout_marginLeft="15dp"
+                        android:padding="10dp"
+                        app:srcCompat="@drawable/email" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:text="Tin nhắn"
-                        android:gravity="center_vertical"
                         android:layout_marginLeft="20dp"
-                        android:textSize="20sp"
+                        android:fontFamily="@font/sf_semi_bold"
+                        android:gravity="center_vertical"
+                        android:text="Tin nhắn"
                         android:textColor="@color/black"
-                        android:fontFamily="@font/sf_semi_bold"/>
+                        android:textSize="20sp" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
                 android:layout_below="@+id/NhanTinblock"
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
+                android:layout_height="80dp"
                 android:layout_margin="20dp"
                 app:cardElevation="8dp"
                 app:cardCornerRadius="15dp">
@@ -157,15 +158,15 @@
                     android:id="@+id/btnLogout"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@drawable/item_color_vang"
+                    android:background="@drawable/item_color_xanh_duong"
                     android:orientation="horizontal">
 
                     <com.google.android.material.imageview.ShapeableImageView
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
                         android:layout_gravity="center"
                         app:srcCompat="@drawable/mobile_phone"
-                        android:padding="17dp"
+                        android:padding="10dp"
                         android:layout_marginLeft="15dp"/>
 
                     <TextView
@@ -189,5 +190,15 @@
         android:layout_height="wrap_content"
         android:visibility="gone"
         android:layout_centerInParent="true"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/progressBar"
+        android:text="Đang tải dữ liệu..."
+        android:layout_centerHorizontal="true"
+        android:fontFamily="@font/exo2_bold"
+        android:textSize="20sp"
+        android:layout_marginTop="15dp"/>
 
 </RelativeLayout>

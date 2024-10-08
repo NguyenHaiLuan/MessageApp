@@ -1,4 +1,4 @@
-package com.example.myapplication.Activity
+package com.example.myapplication.activity
 
 import android.content.Intent
 import android.os.Bundle
@@ -9,7 +9,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.bumptech.glide.Glide
-import com.example.myapplication.Model.User
+import com.example.myapplication.activity.function.FindFriendsActivity
+import com.example.myapplication.model.User
 import com.example.myapplication.R
 import com.example.myapplication.databinding.ActivityMainBinding
 import com.google.firebase.auth.FirebaseAuth
@@ -73,7 +74,13 @@ class MainActivity : AppCompatActivity() {
                 }
             })
 
+        // Nút tìm bạn bè
+        binding.btnFindFriend.setOnClickListener{
+            val intent = Intent(this@MainActivity, FindFriendsActivity::class.java)
+            startActivity(intent)
+        }
 
+        // Nút sign out
         binding.btnLogout.setOnClickListener {
             auth?.signOut()
             val intent = Intent(this@MainActivity, LoginActivity::class.java)
