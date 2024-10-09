@@ -34,6 +34,15 @@ class MessageLobbyActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         initUI()
 
+        // nếu nhấn vào tiêu đề và nút back thì back về luôn
+        binding.titleText.setOnClickListener {
+            finish()
+        }
+
+        binding.backBtnLobby.setOnClickListener {
+            finish()
+        }
+
         // Khởi tạo danh sách cuộc hội thoại và adapter
         conversationList = mutableListOf()
         conversationAdapter = ConversationAdapter(conversationList)

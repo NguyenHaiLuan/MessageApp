@@ -7,7 +7,7 @@
     </style>
 
     <style name="circular">
-        <item name="cornerSize">30%</item>
+        <item name="cornerSize">10%</item>
     </style>
 
     <style name="circle">

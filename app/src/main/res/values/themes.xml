@@ -9,7 +9,7 @@
     <style name="Theme.MyApplication" parent="Base.Theme.MyApplication" />
 
     <style name="circular">
-        <item name="cornerSize">20%</item>
+        <item name="cornerSize">10%</item>
     </style>
 
     <style name="circle">

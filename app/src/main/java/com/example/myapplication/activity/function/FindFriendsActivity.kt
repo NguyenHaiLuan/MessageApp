@@ -26,6 +26,7 @@ import io.github.muddz.styleabletoast.StyleableToast
 class FindFriendsActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityFindFriendsBinding
+    private lateinit var auth: FirebaseAuth
     private lateinit var friendAdapter: FriendAdapter
     private lateinit var friendList: MutableList<User>
     private lateinit var database: DatabaseReference
@@ -39,6 +40,7 @@ class FindFriendsActivity : AppCompatActivity() {
         userId = FirebaseAuth.getInstance().currentUser?.uid ?: ""
         database = FirebaseDatabase.getInstance().getReference("users")
         conversationRef = FirebaseDatabase.getInstance().getReference("conversations").child(userId)
+        auth = FirebaseAuth.getInstance()
 
         loadAllUsers()
 
@@ -101,7 +103,9 @@ class FindFriendsActivity : AppCompatActivity() {
                 val userNameLower = user.userName?.lowercase() // Chuyển tên người dùng thành chữ thường
                 // Sử dụng contains để kiểm tra xem tên người dùng có chứa ký tự tìm kiếm không
                 if (userNameLower != null && userNameLower.contains(query)) {
-                    friendList.add(user) // Thêm vào danh sách nếu tên người dùng chứa ký tự tìm kiếm
+                    if (user.userId != auth.currentUser!!.uid){
+                        friendList.add(user) // Thêm vào danh sách nếu tên người dùng chứa ký tự tìm kiếm
+                    }
                 }
             }
         }
@@ -113,7 +117,7 @@ class FindFriendsActivity : AppCompatActivity() {
         friendList.clear()
         for (data in snapshot.children) {
             val user = data.getValue(User::class.java)
-            if (user != null) {
+            if (user != null && user.userId != auth.currentUser!!.uid) {
                 friendList.add(user)
             }
         }
@@ -134,7 +138,12 @@ class FindFriendsActivity : AppCompatActivity() {
                 friendList.clear()
                 for (friendSnapshot in snapshot.children) {
                     val friend = friendSnapshot.getValue(User::class.java)
-                    friend?.let { friendList.add(it) }
+                    friend?.let {
+                        if (friend.userId != auth.currentUser!!.uid){
+                            friendList.add(it)
+                        }
+
+                    }
                 }
                 friendAdapter.notifyDataSetChanged()
             }
