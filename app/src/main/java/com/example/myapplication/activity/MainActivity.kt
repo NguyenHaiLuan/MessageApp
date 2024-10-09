@@ -12,6 +12,7 @@ import com.bumptech.glide.Glide
 import com.example.myapplication.activity.function.FindFriendsActivity
 import com.example.myapplication.model.User
 import com.example.myapplication.R
+import com.example.myapplication.activity.function.MessageLobbyActivity
 import com.example.myapplication.databinding.ActivityMainBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
@@ -77,6 +78,12 @@ class MainActivity : AppCompatActivity() {
         // Nút tìm bạn bè
         binding.btnFindFriend.setOnClickListener{
             val intent = Intent(this@MainActivity, FindFriendsActivity::class.java)
+            startActivity(intent)
+        }
+
+        // Nút tìm bạn bè
+        binding.btnNhanTin.setOnClickListener{
+            val intent = Intent(this@MainActivity, MessageLobbyActivity::class.java)
             startActivity(intent)
         }
 

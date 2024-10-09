@@ -5,7 +5,10 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.function.FindFriendsActivity">
+    tools:context=".activity.function.FindFriendsActivity"
+    android:background="@color/white">
+
+
 
     <EditText
         android:id="@+id/edt_findFriend"
@@ -40,11 +43,35 @@
         android:layout_margin="10dp"
         android:layout_centerHorizontal="true"/>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/friendRecyclerView"
-        android:layout_below="@+id/btn_findFriend_FF"
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="10dp"/>
+        android:layout_below="@+id/btn_findFriend_FF"
+        android:layout_margin="10dp"
+        android:padding="10dp"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="8dp">
 
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/friendRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/appbackground"/>
+
+            <TextView
+                android:id="@+id/text_khongCoKetQua"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:textColor="@color/white"
+                android:text="Không tìm thấy kết quả nào!!!"
+                android:fontFamily="@font/exo2_bold"
+                android:textSize="20sp"
+                android:visibility="invisible"/>
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
 </RelativeLayout>
