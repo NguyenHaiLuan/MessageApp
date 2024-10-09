@@ -1,8 +1,11 @@
 package com.example.myapplication.model
 
 data class Conversation(
-    val userName: String,
-    val lastMessage: String,
-    val timestamp: Long,
-    val profileImage: String
-)
+    var userName: String = "",
+    var lastMessage: String = "",
+    var timestamp: Long = 0L,
+    var profileImage: String = ""
+) {
+    // Firebase yêu cầu một constructor mặc định (không tham số)
+    constructor() : this("", "", 0L, "")
+}
