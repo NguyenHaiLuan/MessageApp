@@ -236,6 +236,11 @@ class VerificationActivity : AppCompatActivity() {
         }
     }
 
+    override fun onDestroy() {
+        super.onDestroy()
+        dialog?.dismiss()
+    }
+
     private fun initUI() {
         enableEdgeToEdge()
         bind = ActivityVerificationBinding.inflate(layoutInflater)

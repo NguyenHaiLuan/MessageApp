@@ -37,12 +37,17 @@ class FindFriendsActivity : AppCompatActivity() {
         initUI()
         setupRecyclerView()
 
+        //Hàm để load tất cả user
+        //loadAllUsers()
+
+        binding.btnBackFindFriend.setOnClickListener {
+            finish()
+        }
+
         userId = FirebaseAuth.getInstance().currentUser?.uid ?: ""
         database = FirebaseDatabase.getInstance().getReference("users")
         conversationRef = FirebaseDatabase.getInstance().getReference("conversations").child(userId)
         auth = FirebaseAuth.getInstance()
-
-        loadAllUsers()
 
         binding.btnFindFriendFF.setOnClickListener {
             val query = binding.edtFindFriend.text.toString().trim()
@@ -111,6 +116,12 @@ class FindFriendsActivity : AppCompatActivity() {
         }
         // Cập nhật Adapter với danh sách bạn mới
         friendAdapter.notifyDataSetChanged()
+
+        if (friendList.size==0) {
+            binding.textKhongCoKetQua.visibility = View.VISIBLE
+        } else{
+            binding.textKhongCoKetQua.visibility = View.GONE
+        }
     }
 
     private fun handleSearchResult(snapshot: DataSnapshot) {
@@ -173,6 +184,7 @@ class FindFriendsActivity : AppCompatActivity() {
     private fun addFriendToConversations(friend: User) {
         val newConversation = Conversation(
             userName = friend.userName.toString(),
+            userId = friend.userId.toString(),
             lastMessage = "Bạn chưa hỏi thăm người này!",
             timestamp = System.currentTimeMillis(),
             profileImage = friend.profileImage.toString().trim()

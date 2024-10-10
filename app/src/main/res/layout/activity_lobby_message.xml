@@ -5,7 +5,9 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.function.MessageLobbyActivity">
+    tools:context=".activity.function.MessageLobbyActivity"
+    android:fitsSystemWindows="true"
+    android:background="@drawable/appbackground">
 
     <TextView
         android:id="@+id/titleText"
@@ -26,6 +28,7 @@
         android:layout_margin="15dp"/>
 
     <androidx.recyclerview.widget.RecyclerView
+        android:background="@color/white"
         android:id="@+id/myFriendRecyclerView"
         android:layout_below="@+id/titleText"
         android:layout_width="match_parent"

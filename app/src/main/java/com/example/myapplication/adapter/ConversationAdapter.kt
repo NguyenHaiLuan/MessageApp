@@ -1,5 +1,6 @@
 package com.example.myapplication.adapter
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,6 +9,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.myapplication.R
+import com.example.myapplication.activity.function.MessageActivity
 import com.example.myapplication.model.Conversation
 class ConversationAdapter(private val conversationList: List<Conversation>) : RecyclerView.Adapter<ConversationAdapter.ConversationViewHolder>() {
 
@@ -28,6 +30,14 @@ class ConversationAdapter(private val conversationList: List<Conversation>) : Re
         Glide.with(holder.itemView.context)
             .load(conversation.profileImage)
             .into(holder.avtConversation)
+
+        holder.itemView.setOnClickListener{
+            val intent = Intent(holder.itemView.context, MessageActivity::class.java)
+            intent.putExtra("name", conversation.userName)
+            intent.putExtra("image", conversation.profileImage)
+            intent.putExtra("friendId", conversation.userId)
+            holder.itemView.context.startActivity(intent)
+        }
     }
 
     override fun getItemCount(): Int {
